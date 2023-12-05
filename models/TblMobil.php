@@ -63,23 +63,23 @@ class TblMobil extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[NoJenis]].
+     * Gets query for [[TblJenisMobils]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getJeniss()
+    public function getTblJenisMobils()
     {
-        return $this->hasOne(TblJenisMobil::className(), ['No_Jenis' => 'No_Jenis']);
+        return $this->hasOne(TblJenisMobil::class, ['No_Jenis' => 'No_Jenis']);
     }
 
     /**
-     * Gets query for [[TblFeedbacks]].
+     * Gets query for [[TblFeedbacks]]. 
      *
      * @return \yii\db\ActiveQuery
      */
     public function getTblFeedbacks()
     {
-        return $this->hasMany(TblFeedback::className(), ['Id_Mobil' => 'Id_Mobil']);
+        return $this->hasMany(TblFeedback::class, ['Id_Mobil' => 'Id_Mobil']);
     }
 
     /**
@@ -89,7 +89,7 @@ class TblMobil extends \yii\db\ActiveRecord
      */
     public function getTblPenyewaans()
     {
-        return $this->hasMany(TblPenyewaan::className(), ['Id_Mobil' => 'Id_Mobil']);
+        return $this->hasMany(TblPenyewaan::class, ['Id_Mobil' => 'Id_Mobil']);
     }
  
 }

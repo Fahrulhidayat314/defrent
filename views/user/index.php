@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Tambahkan Pengguna', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add User', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'label'=> 'Alamat',
-                'headerOptions'=> ['style'=>'width:50px''class'=>'text-center'],
+                'headerOptions'=> ['class'=>'text-center'],
                 'value'=>function($model){
                     return $model->Alamat;
                 }

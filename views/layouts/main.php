@@ -34,18 +34,22 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
+        'options' => ['class' => 'navbar-expand-md navbar-dark bg-black fixed-top']
     ]);
+    
+    // Menambahkan gambar pada header
+    echo '<img src="assets/kDefRentLogo.jpg" alt="Header Image" class="header-image">';
+    
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
            // ['label' => 'About', 'url' => ['/site/about']],
-            //['label' => 'Administrator', 'url' => ['/administrator']],
-            ['label' => 'User', 'url' => ['/user']],
+            ['label' => 'Administrator', 'url' => ['/administrator']],
+            //['label' => 'User', 'url' => ['/user']],
             ['label' => 'Cars Type', 'url' => ['/jenismobil']],
             ['label' => 'Rental Rules', 'url' => ['/aturan']],
-            //['label' => 'Penyewaan', 'url' => ['/penyewaan']],
+            ['label' => 'Rent!!', 'url' => ['/penyewaan']],
             ['label' => 'Cars', 'url' => ['/mobil']],
            // ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest
@@ -61,6 +65,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         ]
     ]);
     NavBar::end();
+    ?>
+</header>
+
     ?>
 </header>
 

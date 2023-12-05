@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tbl Mobil', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Tbl Mobil', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -64,7 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'harga_sewa',
             'Lokasi',
             'No_Jenis',*/
-            'Jeniss.Jenis_Mobil',
+            'TblJenisMobils.No_Jenis',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblMobil $model, $key, $index, $column) {
