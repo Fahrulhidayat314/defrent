@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\TblJenisMobilSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tbl Jenis Mobils';
+$this->title = 'Cars Type';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbl-jenis-mobil-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Add Cars Add', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
+        <?= Html::a('Add Cars Types', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -26,34 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'label'=> 'Id Jenis',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->No_Jenis;
-                }
-            ],
-            [
-                'label'=> 'Tipe Mobil',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Jenis_Mobil;
-                }
-            ],
-            [
-                'label'=> 'Jumlah Kursi',
-                'headerOptions'=> ['style'=>'width:100px','class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Jumlah_Kursi;
-                }
-            ],
            
-            /*'No_Jenis',
+            'No_Jenis',
             'Jenis_Mobil',
-            'Jumlah_Kursi',*/
+            'Jumlah_Kursi',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblJenisMobil $model, $key, $index, $column) {

@@ -10,61 +10,33 @@ use yii\grid\GridView;
 /** @var app\models\TblMobilSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tbl Mobils';
+$this->title = 'Pick Your Car';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-mobil-index">
+<div class="tbl-mobil-index bg-table-warning">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tbl Mobil', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
+        <?= Html::a('Add Car', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'label'=> 'Id Mobil',
-                'headerOptions'=> ['style'=>'width:150px','class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Id_Mobil;
-                }
-            ],
-            [
-                'label'=> 'Plat Nomor',
-                'headerOptions'=> ['style'=>'width:120px', 'class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Plat_No;
-                }
-            ],
-            [
-                'label'=> 'Merk',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Merk;
-                }
-            ],
-            [
-                'label'=> 'Harga',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->harga_sewa;
-                }
-            ],
-            /*'Id_Mobil',
+            'Id_Mobil',
             'Plat_No',
             'No_Seri',
             'Merk',
             'Status',
             'harga_sewa',
             'Lokasi',
-            'No_Jenis',*/
-            'TblJenisMobils.No_Jenis',
+            'No_Jenis',
+            'tblJenisMobil.Jenis_Mobil',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblMobil $model, $key, $index, $column) {

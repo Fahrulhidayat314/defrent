@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\TblMobil;
+use app\models\TblFeedback;
 
 /**
- * TblMobilSearch represents the model behind the search form of `app\models\TblMobil`.
+ * TblFeedbackSearch represents the model behind the search form of `app\models\TblFeedback`.
  */
-class TblMobilSearch extends TblMobil
+class TblFeedbackSearch extends TblFeedback
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,9 @@ class TblMobilSearch extends TblMobil
     public function rules()
     {
         return [
-            [['Id_Mobil', 'harga_sewa', 'No_Jenis'], 'integer'],
-            [['Plat_No', 'No_Seri', 'Merk', 'Status', 'Lokasi'], 'safe'],
+            [['No_Feedback', 'Id_Mobil', 'No_SIM'], 'integer'],
+            [['Rating'], 'number'],
+            [['Komentar', 'Tanggal'], 'safe'],
         ];
     }
 
@@ -40,8 +41,9 @@ class TblMobilSearch extends TblMobil
      */
     public function search($params)
     {
-        $query = TblMobil::find();
-        $query -> joinWith('tblJenisMobils');
+        $query = TblFeedback::find();
+
+        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,16 +59,14 @@ class TblMobilSearch extends TblMobil
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'No_Feedback' => $this->No_Feedback,
+            'Rating' => $this->Rating,
+            'Tanggal' => $this->Tanggal,
             'Id_Mobil' => $this->Id_Mobil,
-            'harga_sewa' => $this->harga_sewa,
-            'No_Jenis' => $this->No_Jenis,
+            'No_SIM' => $this->No_SIM,
         ]);
 
-        $query->andFilterWhere(['like', 'Plat_No', $this->Plat_No])
-            ->andFilterWhere(['like', 'No_Seri', $this->No_Seri])
-            ->andFilterWhere(['like', 'Merk', $this->Merk])
-            ->andFilterWhere(['like', 'Status', $this->Status])
-            ->andFilterWhere(['like', 'Lokasi', $this->Lokasi]);
+        $query->andFilterWhere(['like', 'Komentar', $this->Komentar]);
 
         return $dataProvider;
     }

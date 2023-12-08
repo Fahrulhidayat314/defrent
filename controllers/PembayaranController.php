@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\TblPelanggaran;
-use app\models\PelanggaranSearch;
+use app\models\TblPembayaran;
+use app\models\TblPembayaranSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TblPelanggaranController implements the CRUD actions for TblPelanggaran model.
+ * PembayaranController implements the CRUD actions for TblPembayaran model.
  */
-class TblPelanggaranController extends Controller
+class PembayaranController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Lists all TblPelanggaran models.
+     * Lists all TblPembayaran models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new PelanggaranSearch();
+        $searchModel = new TblPembayaranSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,30 +48,30 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Displays a single TblPelanggaran model.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * Displays a single TblPembayaran model.
+     * @param int $No_Transaksi No Transaksi
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($No_Pelanggaran)
+    public function actionView($No_Transaksi)
     {
         return $this->render('view', [
-            'model' => $this->findModel($No_Pelanggaran),
+            'model' => $this->findModel($No_Transaksi),
         ]);
     }
 
     /**
-     * Creates a new TblPelanggaran model.
+     * Creates a new TblPembayaran model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new TblPelanggaran();
+        $model = new TblPembayaran();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'No_Pelanggaran' => $model->No_Pelanggaran]);
+                return $this->redirect(['view', 'No_Transaksi' => $model->No_Transaksi]);
             }
         } else {
             $model->loadDefaultValues();
@@ -83,18 +83,18 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Updates an existing TblPelanggaran model.
+     * Updates an existing TblPembayaran model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * @param int $No_Transaksi No Transaksi
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($No_Pelanggaran)
+    public function actionUpdate($No_Transaksi)
     {
-        $model = $this->findModel($No_Pelanggaran);
+        $model = $this->findModel($No_Transaksi);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'No_Pelanggaran' => $model->No_Pelanggaran]);
+            return $this->redirect(['view', 'No_Transaksi' => $model->No_Transaksi]);
         }
 
         return $this->render('update', [
@@ -103,29 +103,29 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Deletes an existing TblPelanggaran model.
+     * Deletes an existing TblPembayaran model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * @param int $No_Transaksi No Transaksi
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($No_Pelanggaran)
+    public function actionDelete($No_Transaksi)
     {
-        $this->findModel($No_Pelanggaran)->delete();
+        $this->findModel($No_Transaksi)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the TblPelanggaran model based on its primary key value.
+     * Finds the TblPembayaran model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $No_Pelanggaran No Pelanggaran
-     * @return TblPelanggaran the loaded model
+     * @param int $No_Transaksi No Transaksi
+     * @return TblPembayaran the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($No_Pelanggaran)
+    protected function findModel($No_Transaksi)
     {
-        if (($model = TblPelanggaran::findOne(['No_Pelanggaran' => $No_Pelanggaran])) !== null) {
+        if (($model = TblPembayaran::findOne(['No_Transaksi' => $No_Transaksi])) !== null) {
             return $model;
         }
 

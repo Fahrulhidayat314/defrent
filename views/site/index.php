@@ -7,10 +7,13 @@ $this->title = 'DefRent';
 ?>
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">
         <h1 class="display-4">WELCOME!</h1>
-        <p class="lead">Welcome To Our Defrent Aplication.</p>
+        <h4 class="lead">Welcome To Our Defrent Application.</h4>
+        <h6class="text-warning-emphasis">Let's Make Your Journey Feel DefRent!! </h6><br><br>
+
 
         <p><a class="btn btn-lg btn-warning" href="http://localhost/basic/web/index.php?r=mobil">Get Started</a></p>
     </div>
+    <!-- <img src="assets/SAVE_20230904_153941.jpg" class="rounded mx-auto d-block" alt="" width="600px"><br><br> -->
 
     <div class="body-content">
 
@@ -21,8 +24,7 @@ $this->title = 'DefRent';
                 <p>Unlock Your Journey with DefRent - The Trusted Name in Rental Cars with Social Media Buzz
                     Welcome to DefRent, where your travel dreams come to life with ease and style. 
                     With a strong reputation on social media, we are proud to be the go-to choice for rental cars that combine reliability and excitement.</p>
-                <p class="text-warning-emphasis">Lets Make Your Journey Feel DefRent!! </p>
-
+               
                 <p><a class="btn btn-lg btn-warning" href="http://localhost/basic/web/index.php?r=aboutapp">About Defrent &raquo;</a></p>
             </div>
             <div class="col-lg-4 mb-3">

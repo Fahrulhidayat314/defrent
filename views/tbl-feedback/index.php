@@ -1,24 +1,24 @@
 <?php
 
-use app\models\TblAturan;
+use app\models\TblFeedback;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /** @var yii\web\View $this */
-/** @var app\models\TblAturanSearch $searchModel */
+/** @var app\models\TblFeedbackSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'The Rules';
+$this->title = 'Your Feedbacks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-aturan-index">
+<div class="tbl-feedback-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Add Rules', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
+        <?= Html::a('Add Your Feedback', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -29,13 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            //'No_Aturan',
-            'Aturan',
-            'Denda',
+
+            'No_Feedback',
+            'Rating',
+            'Komentar',
+            'Tanggal',
+            'Mobil.Id_Mobil',
+            //'No_SIM',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, TblAturan $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'No_Aturan' => $model->No_Aturan]);
+                'urlCreator' => function ($action, TblFeedback $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'No_Feedback' => $model->No_Feedback]);
                  }
             ],
         ],

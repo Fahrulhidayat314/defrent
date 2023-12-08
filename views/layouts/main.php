@@ -5,6 +5,7 @@
 
 use app\assets\AppAsset;
 use app\widgets\Alert;
+use PhpParser\Node\Stmt\Echo_;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
@@ -26,23 +27,23 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column bg-dark-subtle h-100">
 <?php $this->beginBody() ?>
 
 <header id="header">
+        
+   
     <?php
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => ['class' => 'navbar-expand-md navbar-dark bg-black fixed-top']
+        'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
-    
-    // Menambahkan gambar pada header
-    echo '<img src="assets/kDefRentLogo.jpg" alt="Header Image" class="header-image">';
-    
+    echo '<img src="assets/defrent2.png" alt="Header Image" class="header-image" width="80px" >';
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
+            // echo '<span class="badge text-bg-info">Info</span>';
             ['label' => 'Home', 'url' => ['/site/index']],
            // ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Administrator', 'url' => ['/administrator']],
@@ -51,6 +52,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Rental Rules', 'url' => ['/aturan']],
             ['label' => 'Rent!!', 'url' => ['/penyewaan']],
             ['label' => 'Cars', 'url' => ['/mobil']],
+            ['label' => 'Your Respons', 'url' => ['/tbl-feedback']],
+            // tbl-pelanggaran || pembayaran
            // ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
@@ -64,11 +67,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     . '</li>'
         ]
     ]);
+    echo '<div class="spinner-grow text-warning" role="status">
+            <div class="spinner-border float-end" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        </div>';
+    echo '<div class="spinner-grow text-warning" role="status">
+                <span class="visually-hidden">Wait a Minutes...</span>
+        </div>';
     NavBar::end();
     ?>
 </header>
 
-    ?>
+    
 </header>
 
 <main id="main" class="flex-shrink-0" role="main">
@@ -79,18 +90,33 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
+
 </main>
 
-<footer id="footer" class="mt-auto py-3 bg-light">
+<footer id="footer" class="mt-auto py-3 bg-body-secondary">
     <div class="container">
         <div class="row text-muted">
-            <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>
-            <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
+            <div class="col-md-6 text-center text-md-start">&copy; DefRent <?= date('Y') ?></div>
+            <div class="col-md-6 text-center text-md-end">Contact </div>
         </div>
     </div>
 </footer>
 
-<?php $this->endBody() ?>
+<!-- <?php $this->endBody() ?> -->
 </body>
 </html>
 <?php $this->endPage() ?>
+
+<style>
+    .nav-link{
+        color: #F49D1A;
+    }
+    .nav-link:hover{
+        color: #DC3535;
+    }
+    .nav-link:active,
+    .nav-link:focus{
+        color: #DC3535;
+    }
+    
+</style>

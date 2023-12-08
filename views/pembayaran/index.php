@@ -1,27 +1,26 @@
 <?php
 
-use app\models\TblAturan;
+use app\models\TblPembayaran;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use yii\widgets\Pjax;
+
 /** @var yii\web\View $this */
-/** @var app\models\TblAturanSearch $searchModel */
+/** @var app\models\TblPembayaranSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'The Rules';
+$this->title = 'Payment';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tbl-aturan-index">
+<div class="tbl-pembayaran-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Add Rules', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
+        <?= Html::a('Add Payment', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
-    <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -29,18 +28,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            //'No_Aturan',
-            'Aturan',
-            'Denda',
+
+            'No_Transaksi',
+            'Tanggal',
+            'Total_Harga',
+            'Metode_Pembayaran',
+            'No_Sewa',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, TblAturan $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'No_Aturan' => $model->No_Aturan]);
+                'urlCreator' => function ($action, TblPembayaran $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'No_Transaksi' => $model->No_Transaksi]);
                  }
             ],
         ],
     ]); ?>
 
-    <?php Pjax::end(); ?>
 
 </div>

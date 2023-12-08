@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\TblPelanggaran;
-use app\models\PelanggaranSearch;
+use app\models\TblFeedback;
+use app\models\TblFeedbackSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TblPelanggaranController implements the CRUD actions for TblPelanggaran model.
+ * TblFeedbackController implements the CRUD actions for TblFeedback model.
  */
-class TblPelanggaranController extends Controller
+class TblFeedbackController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Lists all TblPelanggaran models.
+     * Lists all TblFeedback models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new PelanggaranSearch();
+        $searchModel = new TblFeedbackSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,30 +48,30 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Displays a single TblPelanggaran model.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * Displays a single TblFeedback model.
+     * @param int $No_Feedback No Feedback
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($No_Pelanggaran)
+    public function actionView($No_Feedback)
     {
         return $this->render('view', [
-            'model' => $this->findModel($No_Pelanggaran),
+            'model' => $this->findModel($No_Feedback),
         ]);
     }
 
     /**
-     * Creates a new TblPelanggaran model.
+     * Creates a new TblFeedback model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new TblPelanggaran();
+        $model = new TblFeedback();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'No_Pelanggaran' => $model->No_Pelanggaran]);
+                return $this->redirect(['view', 'No_Feedback' => $model->No_Feedback]);
             }
         } else {
             $model->loadDefaultValues();
@@ -83,18 +83,18 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Updates an existing TblPelanggaran model.
+     * Updates an existing TblFeedback model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * @param int $No_Feedback No Feedback
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($No_Pelanggaran)
+    public function actionUpdate($No_Feedback)
     {
-        $model = $this->findModel($No_Pelanggaran);
+        $model = $this->findModel($No_Feedback);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'No_Pelanggaran' => $model->No_Pelanggaran]);
+            return $this->redirect(['view', 'No_Feedback' => $model->No_Feedback]);
         }
 
         return $this->render('update', [
@@ -103,29 +103,29 @@ class TblPelanggaranController extends Controller
     }
 
     /**
-     * Deletes an existing TblPelanggaran model.
+     * Deletes an existing TblFeedback model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $No_Pelanggaran No Pelanggaran
+     * @param int $No_Feedback No Feedback
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($No_Pelanggaran)
+    public function actionDelete($No_Feedback)
     {
-        $this->findModel($No_Pelanggaran)->delete();
+        $this->findModel($No_Feedback)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the TblPelanggaran model based on its primary key value.
+     * Finds the TblFeedback model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $No_Pelanggaran No Pelanggaran
-     * @return TblPelanggaran the loaded model
+     * @param int $No_Feedback No Feedback
+     * @return TblFeedback the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($No_Pelanggaran)
+    protected function findModel($No_Feedback)
     {
-        if (($model = TblPelanggaran::findOne(['No_Pelanggaran' => $No_Pelanggaran])) !== null) {
+        if (($model = TblFeedback::findOne(['No_Feedback' => $No_Feedback])) !== null) {
             return $model;
         }
 

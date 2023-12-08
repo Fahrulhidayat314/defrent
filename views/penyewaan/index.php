@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\TblPenyewaanSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tbl Penyewaans';
+$this->title = 'Rent Your Car';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbl-penyewaan-index">
@@ -18,11 +18,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tbl Penyewaan', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Rent', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -35,9 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'tgl_sewa',
             'Tgl_Kembali',
             'Lama_Sewa',
-            //'No_Pegawai',
+            'NoPegawai.No_Pegawai',
             //'No_SIM',
-            //'Id_Mobil',
+            'Mobil.Id_Mobil',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblPenyewaan $model, $key, $index, $column) {

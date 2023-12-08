@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 /** @var app\models\TblAdministratorSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tbl Administrators';
+$this->title = 'The Administrators';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tbl-administrator-index">
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Add Administrator', ['create'], ['class' => 'btn btn-lg btn-warning']) ?>
     </p>
 
-    <?php Pjax::begin(); ?>
+<?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -44,6 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-    <?php Pjax::end(); ?>
+<?php Pjax::end(); ?>
 
 </div>

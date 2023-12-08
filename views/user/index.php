@@ -26,41 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'label'=> 'Nomor SIM',
-                'headerOptions'=> ['style'=>'width:150px','class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->No_SIM;
-                }
-            ],
-            [
-                'label'=> 'Nama',
-                'headerOptions'=> ['style'=>'width:150px', 'class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Nama_User;
-                }
-            ],
-            [
-                'label'=> 'No. HP',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->No_Hp;
-                }
-            ],
-            [
-                'label'=> 'Alamat',
-                'headerOptions'=> ['class'=>'text-center'],
-                'value'=>function($model){
-                    return $model->Alamat;
-                }
-            ],
-            /*'No_SIM',
+            'No_SIM',
             'Nama_User',
             'No_Hp',
-            'Alamat:ntext',*/
+            'Alamat:ntext',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblUser $model, $key, $index, $column) {
