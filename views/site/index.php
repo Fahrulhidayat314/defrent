@@ -6,9 +6,9 @@ $this->title = 'DefRent';
 
 ?>
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">WELCOME!</h1>
+        <h1 class="display-3 ">WELCOME!</h1>
         <h4 class="lead">Welcome To Our Defrent Application.</h4>
-        <h6class="text-warning-emphasis">Let's Make Your Journey Feel DefRent!! </h6><br><br>
+        <h6 class="text-warning-emphasis">Let's Make Your Journey Feel DefRent!! </h6><br><br>
 
 
         <p><a class="btn btn-lg btn-warning" href="http://localhost/basic/web/index.php?r=mobil">Get Started</a></p>

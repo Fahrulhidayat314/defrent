@@ -63,7 +63,7 @@ class TblFeedback extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getMobil()
+    public function getmobil()
     {
         return $this->hasOne(TblMobil::class, ['Id_Mobil' => 'Id_Mobil']);
     }
@@ -73,7 +73,7 @@ class TblFeedback extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getNoSIM()
+    public function getnoSIM()
     {
         return $this->hasOne(TblUser::class, ['No_SIM' => 'No_SIM']);
     }

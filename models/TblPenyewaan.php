@@ -70,7 +70,7 @@ class TblPenyewaan extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getMobil()
+    public function getmobil()
     {
         return $this->hasOne(TblMobil::class, ['Id_Mobil' => 'Id_Mobil']);
     }
@@ -80,7 +80,7 @@ class TblPenyewaan extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getNoPegawai()
+    public function getnopegawai()
     {
         return $this->hasOne(TblAdministrator::class, ['No_Pegawai' => 'No_Pegawai']);
     }

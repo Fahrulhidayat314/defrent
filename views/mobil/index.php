@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'harga_sewa',
             'Lokasi',
             'No_Jenis',
-            'tblJenisMobil.Jenis_Mobil',
+            'tblJenisMobils.Jenis_Mobil',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblMobil $model, $key, $index, $column) {

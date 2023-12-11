@@ -31,11 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'No_Feedback',
+            'mobil.Merk',
+            'noSIM.Nama_User',
             'Rating',
             'Komentar',
             'Tanggal',
-            'Mobil.Id_Mobil',
-            //'No_SIM',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblFeedback $model, $key, $index, $column) {

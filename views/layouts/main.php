@@ -67,14 +67,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     . '</li>'
         ]
     ]);
-    echo '<div class="spinner-grow text-warning" role="status">
-            <div class="spinner-border float-end" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        </div>';
-    echo '<div class="spinner-grow text-warning" role="status">
-                <span class="visually-hidden">Wait a Minutes...</span>
-        </div>';
+
     NavBar::end();
     ?>
 </header>
@@ -114,9 +107,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     .nav-link:hover{
         color: #DC3535;
     }
-    .nav-link:active,
-    .nav-link:focus{
+    .nav-link:active{
         color: #DC3535;
     }
-    
+    /* .nav-link: */
 </style>

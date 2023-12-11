@@ -67,7 +67,7 @@ class TblMobil extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTblJenisMobils()
+    public function gettblJenisMobils()
     {
         return $this->hasOne(TblJenisMobil::class, ['No_Jenis' => 'No_Jenis']);
     }

@@ -29,15 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
+            'noSIM.Nama_User',
             'No_Sewa',
+            'nopegawai.Nama_Admin',
             'Rencana',
             'tgl_sewa',
             'Tgl_Kembali',
             'Lama_Sewa',
-            'NoPegawai.No_Pegawai',
-            //'No_SIM',
-            'Mobil.Id_Mobil',
+            'mobil.Merk',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblPenyewaan $model, $key, $index, $column) {
