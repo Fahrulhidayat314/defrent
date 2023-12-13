@@ -42,7 +42,7 @@ $this->title = 'DefRent';
                     Simply enter your travel dates, select your preferred vehicle, and choose from our convenient pickup and drop-off locations. 
                     Our streamlined booking process ensures you can secure your rental car in no time, allowing you to focus on planning the rest of your journey.</p>
 
-                <p><a class="btn btn-lg btn-warning" href="http://localhost/basic/web/index.php?r=mobil">Rent Now!! &raquo;</a></p>
+                <p><a class="btn btn-lg btn-warning" href="http://localhost/basic/web/index.php?r=penyewaan%2Fcreate">Rent Now!! &raquo;</a></p>
             </div>
         </div>
 

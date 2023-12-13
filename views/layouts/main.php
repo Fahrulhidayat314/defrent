@@ -46,13 +46,14 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             // echo '<span class="badge text-bg-info">Info</span>';
             ['label' => 'Home', 'url' => ['/site/index']],
            // ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Administrator', 'url' => ['/administrator']],
+           // ['label' => 'Administrator', 'url' => ['/administrator']],
             //['label' => 'User', 'url' => ['/user']],
             ['label' => 'Cars Type', 'url' => ['/jenismobil']],
             ['label' => 'Rental Rules', 'url' => ['/aturan']],
-            ['label' => 'Rent!!', 'url' => ['/penyewaan']],
+            ['label' => 'Rent!!', 'url' => ['/penyewaan/create']],
             ['label' => 'Cars', 'url' => ['/mobil']],
-            ['label' => 'Your Respons', 'url' => ['/tbl-feedback']],
+            ['label' => 'Feedback', 'url' => ['/tbl-feedback/create']],
+            ['label' => 'Payment', 'url' => ['/pembayaran/create']],
             // tbl-pelanggaran || pembayaran
            // ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest
@@ -71,7 +72,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     NavBar::end();
     ?>
 </header>
-
     
 </header>
 

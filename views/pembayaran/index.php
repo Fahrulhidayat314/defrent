@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'Tanggal',
             'Total_Harga',
             'Metode_Pembayaran',
-            'No_Sewa',
+            'noSewa.mobil.Merk',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, TblPembayaran $model, $key, $index, $column) {

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\models\TblPembayaran $model */
@@ -11,17 +12,29 @@ use yii\widgets\ActiveForm;
 <div class="tbl-pembayaran-form">
 
     <?php $form = ActiveForm::begin(); ?>
+    <div class="row col-4 md"><?= $form->field($model, 'Tanggal')->textInput() ?></div>
+    
 
-    <?= $form->field($model, 'Tanggal')->textInput() ?>
+    <?= $form->field($model, 'Total_Harga')->textInput(['Rp.']); ?>
 
-    <?= $form->field($model, 'Total_Harga')->textInput() ?>
+<?php 
+    $dataPost=ArrayHelper::map(\app\models\TblPembayaran::find()
+    ->asArray()->all(), 'Metode_Pembayaran', 'Metode_Pembayaran');
+        echo $form->field($model, 'Metode_Pembayaran')
+            ->dropDownList($dataPost,
+                ['Metode_Pembayaran'=>'Metode_Pembayaran']);
+?>
 
-    <?= $form->field($model, 'Metode_Pembayaran')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'No_Sewa')->textInput() ?>
+<?php 
+    $dataPost=ArrayHelper::map(\app\models\TblPenyewaan::find()
+    ->asArray()->all(), 'No_Sewa', 'No_Sewa');
+        echo $form->field($model, 'No_Sewa')
+            ->dropDownList($dataPost,
+                ['No_Sewa'=>'No_Sewa']);
+?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-warning']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

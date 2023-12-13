@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'noSIM.Nama_User',
+            'nosim.Nama_User',
             'No_Sewa',
             'nopegawai.Nama_Admin',
             'Rencana',

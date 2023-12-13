@@ -24,7 +24,7 @@ class MobilController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+                        'delete' => ['get'],
                     ],
                 ],
             ]
@@ -71,7 +71,7 @@ class MobilController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Id_Mobil' => $model->Id_Mobil]);
+                return $this->redirect(['view', 'id_Mobil' => $model->id_Mobil]);
             }
         } else {
             $model->loadDefaultValues();
@@ -131,4 +131,6 @@ class MobilController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    
 }

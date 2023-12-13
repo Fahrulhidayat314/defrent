@@ -73,3 +73,15 @@ if (YII_ENV_DEV) {
 }
 
 return $config;?>
+<?php return [
+    // ...
+    'components' => [
+        // ...
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'yyyy-MM-dd',
+            'datetimeFormat' => 'yyyy-MM-dd HH:mm:ss',
+        ],
+    ],
+    // ...
+];?>

@@ -90,7 +90,7 @@ class TblPenyewaan extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getNoSIM()
+    public function getnosim()
     {
         return $this->hasOne(TblUser::class, ['No_SIM' => 'No_SIM']);
     }
